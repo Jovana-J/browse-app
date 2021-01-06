@@ -1,4 +1,4 @@
-# Ethereum transactions App
+# Transactions App
 
 Technologies used are HTML, CSS, JS, React and SCSS.
 
