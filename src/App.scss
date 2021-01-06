@@ -1,0 +1,684 @@
+$font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+%flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%browse-link {
+  @extend %flex-centered;
+  font-size: 12pt;
+  text-transform: capitalize;
+  color: rgb(85, 85, 85);
+  text-decoration: none;
+  padding-left: 2em;
+  padding-right: 2em;
+  transition-duration: 500ms;
+}
+.Browse {
+  position: absolute;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 4em;
+  height: 4em;
+  border-radius: 2em;
+  background-color: rgb(248, 248, 248);
+  background-color: rgb(31, 31, 31);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(31, 31, 40),
+    rgb(31, 31, 31)
+  );
+  @extend %flex-centered;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 1;
+  .HomeLink {
+    font-family: $font-stack;
+    height: 100%;
+    @extend %browse-link;
+    margin-left: 3vw;
+    border-bottom: 1px solid transparent;
+  }
+  .HomeLink:hover {
+    border-bottom: 1px solid blue;
+    color: rgb(130, 130, 130);
+  }
+  .BrowseLinks {
+    height: 100%;
+    @extend %flex-centered;
+    flex-direction: row;
+    margin-right: 3vw;
+    .BrowseBy {
+      font-family: $font-stack;
+      height: 100%;
+      @extend %browse-link;
+    }
+    .AdressLink {
+      font-family: $font-stack;
+      height: 100%;
+      @extend %browse-link;
+      border-bottom: 1px solid transparent;
+    }
+    .AdressLink:hover {
+      border-bottom: 1px solid blue;
+      color: rgb(130, 130, 130);
+    }
+    .BlockLink {
+      font-family: $font-stack;
+      height: 100%;
+      @extend %browse-link;
+      border-bottom: 1px solid transparent;
+    }
+    .BlockLink:hover {
+      border-bottom: 1px solid blue;
+      color: rgb(130, 130, 130);
+    }
+  }
+}
+.HomePage {
+  width: 100%;
+  height: 100vh;
+  @extend %flex-centered;
+  background-color: blue;
+  background-color: rgb(22, 22, 22);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(22, 22, 30),
+    rgb(22, 22, 22)
+  );
+  flex-direction: column;
+  justify-content: flex-start;
+  .Home {
+    margin-top: 14em;
+    border-radius: 2em;
+    width: 80%;
+    height: 24em;
+    background-color: rgb(49, 49, 255);
+    background-color: rgb(31, 31, 31);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(31, 31, 40),
+      rgb(31, 31, 31)
+    );
+    .loaderContainer {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 3;
+      grid-row-end: 5;
+      @extend %flex-centered;
+      .circleLoad {
+        font-size: 12pt;
+        width: 4em;
+        height: 4em;
+        border-radius: 50%;
+        border: 1px solid rgba(85, 85, 85, 0.3);
+        border-top: 1px solid blue;
+        animation: cirlceLoader 2000ms infinite ease-in-out;
+        @keyframes cirlceLoader {
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+    .HomeTitle {
+      font-family: $font-stack;
+      font-size: 27pt;
+      font-weight: 100;
+      line-height: 1.1em;
+      color: rgb(177, 177, 255);
+      color: rgb(135, 135, 135);
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 3;
+      grid-row-end: 5;
+      @extend %flex-centered;
+      color: rgb(85, 85, 85);
+    }
+    .HomeETHTitle {
+      width: 100%;
+      font-family: $font-stack;
+      font-size: 18pt;
+      font-weight: 100;
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      @extend %flex-centered;
+      color: rgb(130, 130, 130);
+    }
+    .HomeETHinfo {
+      width: 150%;
+      margin-left: -25%;
+      font-family: $font-stack;
+      font-size: 12pt;
+      font-weight: 100;
+      line-height: 1em;
+      grid-column-start: 6;
+      grid-column-end: 8;
+      grid-row-start: 4;
+      grid-row-end: 5;
+      @extend %flex-centered;
+      color: rgb(130, 130, 130);
+      height: 100%;
+      border-radius: 2em;
+      background-color: transparent;
+      outline: none;
+      background-image: linear-gradient(
+        to bottom right,
+        rgb(29, 29, 45),
+        rgb(29, 29, 29)
+      );
+      .HomeETHinfoNu {
+        font-size: 18pt;
+        color: blue;
+      }
+    }
+    .HomeLastPrice {
+      width: 100%;
+      font-family: $font-stack;
+      font-size: 18pt;
+      font-weight: 100;
+      line-height: 1em;
+      grid-column-start: 9;
+      grid-column-end: 13;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      @extend %flex-centered;
+      color: rgb(130, 130, 130);
+    }
+    .HomeLastPriceInfo {
+      width: 80%;
+      margin-left: 10%;
+      font-family: $font-stack;
+      font-size: 12pt;
+      font-weight: 100;
+      line-height: 1em;
+      color: blue;
+      grid-column-start: 9;
+      grid-column-end: 13;
+      grid-row-start: 4;
+      grid-row-end: 5;
+      @extend %flex-centered;
+      color: rgb(130, 130, 130);
+      height: 100%;
+      border-radius: 2em;
+      background-color: transparent;
+      outline: none;
+      background-image: linear-gradient(
+        to bottom right,
+        rgb(29, 29, 45),
+        rgb(29, 29, 29)
+      );
+      .HomeLastPriceInfoNu {
+        font-size: 18pt;
+        color: blue;
+      }
+    }
+  }
+  .About {
+    width: 80%;
+    font-family: $font-stack;
+    font-weight: 400;
+    line-height: 1em;
+    @extend %flex-centered;
+    font-size: 12pt;
+    text-transform: capitalize;
+    color: rgb(85, 85, 85);
+    height: 4em;
+    border-bottom: 1px solid blue;
+  }
+}
+.AdressPage {
+  height: 100vh;
+  @extend %flex-centered;
+  background-color: rgb(22, 22, 22);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(22, 22, 30),
+    rgb(22, 22, 22)
+  );
+  flex-direction: column;
+  justify-content: flex-start;
+  .Adress {
+    margin-top: 14em;
+    border-radius: 2em;
+    width: 80%;
+    background-color: rgb(31, 31, 31);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    height: 24em;
+    border-bottom: 1px solid transparent;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(31, 31, 40),
+      rgb(31, 31, 31)
+    );
+    .AdressTitle {
+      width: 100%;
+      font-family: $font-stack;
+      font-size: 18pt;
+      font-weight: 100;
+      grid-column-start: 2;
+      grid-column-end: 7;
+      grid-row-start: 2;
+      grid-row-end: 4;
+      @extend %flex-centered;
+      justify-content: flex-start;
+      color: rgb(130, 130, 130);
+    }
+    .AdressBalanceWrapper {
+      width: 100%;
+      font-family: $font-stack;
+      font-size: 12pt;
+      font-weight: 100;
+      grid-column-start: 7;
+      grid-column-end: 12;
+      grid-row-start: 2;
+      grid-row-end: 4;
+      @extend %flex-centered;
+      height: 4em;
+      margin-top: 2em;
+      .AdressBalance {
+        display: none;
+        width: 100%;
+        font-family: $font-stack;
+        font-size: 18pt;
+        font-weight: 100;
+        @extend %flex-centered;
+        color: rgb(130, 130, 130);
+        height: 100%;
+        border-radius: 2em;
+        background-color: transparent;
+        outline: none;
+        background-image: linear-gradient(
+          to bottom right,
+          rgb(29, 29, 45),
+          rgb(29, 29, 29)
+        );
+        .AdressBalanceNu {
+          color: blue;
+          font-size: 18pt;
+          font-weight: 100;
+        }
+      }
+    }
+    .AdressInput {
+      @extend %browse-link;
+      font-family: $font-stack;
+      color: rgb(135, 135, 135);
+      grid-column-start: 2;
+      grid-column-end: 10;
+      grid-row-start: 4;
+      grid-row-end: 5;
+      @extend %flex-centered;
+      text-transform: none;
+      border-bottom-left-radius: 2em;
+      border-top-left-radius: 2em;
+      background-color: transparent;
+      outline: none;
+      border: 1px solid transparent;
+      background-image: linear-gradient(
+        to bottom right,
+        rgb(29, 29, 38),
+        rgb(29, 29, 29)
+      );
+      border-right: 1px solid blue;
+    }
+    .AdressInput::placeholder {
+      color: rgb(85, 85, 85);
+    }
+    .AdressInputButton {
+      @extend %browse-link;
+      height: 4em;
+      font-family: $font-stack;
+      color: rgb(135, 135, 135);
+      grid-column-start: 10;
+      grid-column-end: 12;
+      grid-row-start: 4;
+      grid-row-end: 5;
+      @extend %flex-centered;
+      border-bottom-right-radius: 2em;
+      border-top-right-radius: 2em;
+      background-color: transparent;
+      outline: none;
+      border: 1px solid transparent;
+      background-image: linear-gradient(
+        to bottom right,
+        rgb(29, 29, 45),
+        rgb(29, 29, 29)
+      );
+      cursor: pointer;
+      transition-duration: 500ms;
+    }
+    .AdressInputButton:hover {
+      background-image: linear-gradient(
+        to bottom right,
+        rgb(27, 27, 43),
+        rgb(29, 29, 29)
+      );
+    }
+  }
+}
+.BlockPage {
+  height: 100vh;
+  @extend %flex-centered;
+  background-color: rgb(22, 22, 22);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(22, 22, 30),
+    rgb(22, 22, 22)
+  );
+  flex-direction: column;
+  justify-content: flex-start;
+  .Block {
+    margin-top: 14em;
+    border-radius: 2em;
+    width: 80%;
+    height: 40%;
+    background-color: rgb(31, 31, 31);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    height: 24em;
+    border-bottom: 1px solid transparent;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(31, 31, 40),
+      rgb(31, 31, 31)
+    );
+  }
+  .BlockTitle {
+    width: 100%;
+    font-family: $font-stack;
+    font-size: 18pt;
+    font-weight: 100;
+    grid-column-start: 2;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    @extend %flex-centered;
+    justify-content: flex-start;
+    color: rgb(130, 130, 130);
+  }
+  .BlockNumber {
+    width: 100%;
+    height: 4em;
+    font-family: $font-stack;
+    font-size: 12pt;
+    grid-column-start: 10;
+    grid-column-end: 12;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    @extend %flex-centered;
+    color: blue;
+    margin-top: 2em;
+    border-radius: 2em;
+    background-color: transparent;
+    outline: none;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(29, 29, 45),
+      rgb(29, 29, 29)
+    );
+    .BlockNu {
+      color: blue;
+      font-size: 18pt;
+      font-weight: 100;
+      cursor: text;
+    }
+  }
+  .BlockInput {
+    @extend %browse-link;
+    font-family: $font-stack;
+    color: rgb(135, 135, 135);
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    @extend %flex-centered;
+    text-transform: none;
+    border-bottom-left-radius: 2em;
+    border-top-left-radius: 2em;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid transparent;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(29, 29, 38),
+      rgb(29, 29, 29)
+    );
+    border-right: 1px solid blue;
+  }
+  .BlockInput::placeholder {
+    color: rgb(85, 85, 85);
+  }
+  .BlockInputButton {
+    @extend %browse-link;
+    height: 4em;
+    font-family: $font-stack;
+    color: rgb(135, 135, 135);
+    grid-column-start: 10;
+    grid-column-end: 12;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    @extend %flex-centered;
+    border-bottom-right-radius: 2em;
+    border-top-right-radius: 2em;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid transparent;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(29, 29, 45),
+      rgb(29, 29, 29)
+    );
+    cursor: pointer;
+    transition-duration: 500ms;
+  }
+  .BlockInputButton:hover {
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(27, 27, 43),
+      rgb(29, 29, 29)
+    );
+  }
+}
+  .BlockDataPage {
+    padding-bottom: 8em;
+    @extend %flex-centered;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(22, 22, 30),
+      rgb(22, 22, 22)
+    );
+    flex-direction: column;
+    justify-content: flex-start;
+    .BlockData {
+      margin-top: 14em;
+      border-radius: 2em;
+      width: 80%;
+      background-color: rgb(31, 31, 31);
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+      height: 42em;
+      border-bottom: 1px solid transparent;
+      background-image: linear-gradient(
+        to bottom right,
+        rgb(31, 31, 40),
+        rgb(31, 31, 31)
+      );
+      transition-duration: 300ms;
+      transition-timing-function: ease-in-out;
+      .NoBlockNu {
+        grid-column-start: 1;
+        grid-column-end: 13;
+        grid-row-start: 1;
+        grid-row-end: 11;
+        @extend %flex-centered;
+        font-family: $font-stack;
+        font-size: 18pt;
+        font-weight: 100;
+        color: rgb(130, 130, 130);
+        text-decoration: none;
+        transition-duration: 500ms;
+      }
+      .NoBlockNu:hover {
+        color: rgb(85, 85, 85);
+        cursor: pointer;
+      }
+      .BlockDataCol1 {
+        font-family: $font-stack;
+        font-size: 12pt;
+        font-weight: 400;
+        padding-left: 2em;
+        margin-left: 3vw;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 11;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: rgb(130, 130, 130);
+        .propsCol1 {
+          width: 100%;
+          font-family: $font-stack;
+          font-size: 12pt;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          text-transform: capitalize;
+        }
+      }
+      .BlockDataCol2 {
+        font-family: $font-stack;
+        font-size: 12pt;
+        font-weight: 400;
+        grid-column-start: 3;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 11;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: rgb(130, 130, 130);
+        .propsValueCol1 {
+          width: 80%;
+          height: 15pt;
+          font-family: $font-stack;
+          font-size: 12pt;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          overflow: hidden;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          resize: none;
+          color: rgb(85, 85, 85);
+        }
+      }
+      .BlockDataCol3 {
+        font-family: $font-stack;
+        font-size: 12pt;
+        font-weight: 400;
+        padding-left: 2em;
+        margin-left: 3vw;
+        grid-column-start: 7;
+        grid-column-end: 9;
+        grid-row-start: 1;
+        grid-row-end: 11;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: rgb(130, 130, 130);
+        .propsCol1 {
+          width: 100%;
+          font-family: $font-stack;
+          font-size: 12pt;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          text-transform: capitalize;
+        }
+      }
+      .BlockDataCol4 {
+        font-family: $font-stack;
+        font-size: 12pt;
+        font-weight: 400;
+        grid-column-start: 9;
+        grid-column-end: 13;
+        grid-row-start: 1;
+        grid-row-end: 11;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: rgb(130, 130, 130);
+        .propsValueCol1 {
+          width: 80%;
+          font-family: $font-stack;
+          font-size: 12pt;
+          height: 15pt;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          overflow: hidden;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          resize: none;
+          color: rgb(85, 85, 85);
+        }
+      }
+    }
+  }
+.PageNotFoundPage{
+  height: 100vh;
+  @extend %flex-centered;
+  background-color: rgb(22, 22, 22);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(22, 22, 30),
+    rgb(22, 22, 22)
+  );
+  flex-direction: column;
+  justify-content: flex-start;
+  .PageNotFound{
+    margin-top: 14em;
+    border-radius: 2em;
+    width: 80%;
+    background-color: rgb(31, 31, 31);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    height: 24em;
+    border-bottom: 1px solid transparent;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(31, 31, 40),
+      rgb(31, 31, 31)
+    );
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;    
+    .NoPage {
+      grid-column-start: 1;
+      grid-column-end: 13;
+      grid-row-start: 1;
+      grid-row-end: 11;
+      @extend %flex-centered;
+      font-family: $font-stack;
+      font-size: 18pt;
+      font-weight: 100;
+      color: rgb(130, 130, 130);
+      text-decoration: none;
+      transition-duration: 500ms;
+    }
+  }
+}
